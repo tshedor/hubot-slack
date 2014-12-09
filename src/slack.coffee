@@ -34,7 +34,7 @@ class SlackBot extends Adapter
     @client.login()
 
   error: (error) =>
-    @robot.logger.error "Received error #{error.toString()}"
+    @robot.logger.error "Received error #{JSON.stringify(error)}"
 
   loggedIn: (self, team) =>
     @robot.logger.info "Logged in as #{self.name} of #{team.name}, but not yet connected"
